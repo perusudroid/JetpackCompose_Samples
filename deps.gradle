@@ -1,0 +1,130 @@
+ext.versions = [
+        gradleBuildTool      : '4.0.1',
+        spotlessGradle       : '5.6.0',
+        kotlin               : '1.4.10',
+        composeVersion       : '1.0.0-alpha03',
+        minSdk               : 23,
+        compileSdk           : 30,
+        appcompat            : '1.1.0',
+        constraint_layout    : '1.1.3',
+        junit_version        : '4.12',
+        junitExt             : '1.1.2',
+        coroutinesVersion    : '1.3.9',
+        expresso_version     : '3.2.0',
+        legacy               : '1.0.0',
+        material_version     : '1.2.1',
+        coreKtx              : '1.3.1',
+        coreKtxCompose       : '1.5.0-alpha03',
+        nav_version          : '2.3.0',
+        retrofit             : '2.6.2',
+        okhttp               : '4.2.0',
+        gson                 : '2.6.2',
+        rxAdapter            : '2.6.0',
+        loggingInterceptor   : '4.2.0',
+        glide                : "4.11.0",
+        viewmodel            : "2.2.0",
+        livedata             : "2.3.0-alpha07",
+        livedataExt          : "2.2.0",
+        rxAndroid            : "2.1.1",
+        rxJava               : "2.2.9",
+        roomVersion          : '2.2.5',
+        archCompomentVersion : '2.1.0',
+        daggerHiltCoreVersion: '2.29.1-alpha',
+        daggerHiltVersion    : '1.0.0-alpha02',
+        whatIfVersion        : '1.0.6',
+        startupVersion       : '1.0.0-beta01',
+        sandwichVersion      : '1.0.5',
+        fragmentVersion      : '1.2.5',
+]
+ext {
+
+
+    testLibraries = [
+            "junit:junit:$versions.junit_version",
+            "androidx.arch.core:core-testing:$versions.archCompomentVersion"
+    ]
+    androidTestLibraries = [
+            "androidx.test.ext:junit:$versions.junitExt",
+            "androidx.test.espresso:espresso-core:$versions.expresso_version",
+            "androidx.ui:ui-test:$versions.composeVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesVersion"
+    ]
+
+    android = [
+            'roomCompiler'      : "androidx.room:room-compiler:$versions.roomVersion",
+            'daggerHilt'        : "com.google.dagger:hilt-compiler:$versions.daggerHiltCoreVersion",
+            'daggerHiltCompiler': "androidx.hilt:hilt-compiler:$versions.daggerHiltVersion"
+    ]
+
+    appCompatBase = [
+            fileTree(dir: "libs", include: ["*.jar"]),
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_version",
+            "androidx.core:core-ktx:$versions.coreKtx",
+            "androidx.appcompat:appcompat:$versions.appcompat",
+            "androidx.legacy:legacy-support-v4:$versions.legacy",
+    ]
+    composeBase = [
+            fileTree(dir: "libs", include: ["*.jar"]),
+            "androidx.core:core-ktx:$versions.coreKtxCompose",
+    ]
+    view = [
+            "com.google.android.material:material:$versions.material_version",
+            "androidx.constraintlayout:constraintlayout:$versions.constraint_layout",
+    ]
+    networking = [
+            "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            "com.squareup.okhttp3:okhttp:$versions.okhttp",
+            "com.squareup.retrofit2:converter-gson:$versions.gson",
+            "com.squareup.retrofit2:adapter-rxjava2:$versions.rxAdapter",
+            "com.squareup.okhttp3:logging-interceptor:$versions.loggingInterceptor",
+            "com.github.bumptech.glide:glide:$versions.glide"
+    ]
+    lifecycleArch = [
+            "androidx.fragment:fragment-ktx:$versions.fragmentVersion",
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.viewmodel",
+            "androidx.lifecycle:lifecycle-runtime:$versions.livedata",
+            "androidx.lifecycle:lifecycle-livedata-ktx:$versions.livedata",
+            "androidx.lifecycle:lifecycle-extensions:$versions.livedataExt",
+    ]
+    navigation = [
+            "androidx.navigation:navigation-fragment-ktx:$versions.nav_version",
+            "androidx.navigation:navigation-ui-ktx:$versions.nav_version",
+            "androidx.navigation:navigation-fragment:$versions.nav_version",
+            "androidx.navigation:navigation-ui:$versions.nav_version"
+    ]
+    rx = [
+            "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+            "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+    ]
+
+    composeComponents = [
+            "androidx.compose.ui:ui:$versions.composeVersion",
+            "androidx.compose.material:material:$versions.composeVersion",
+            "androidx.compose.material:material-icons-extended:$versions.composeVersion",
+            "androidx.compose.foundation:foundation:$versions.composeVersion",
+            "androidx.compose.foundation:foundation-layout:$versions.composeVersion",
+            "androidx.compose.animation:animation:$versions.composeVersion",
+            "androidx.compose.runtime:runtime:$versions.composeVersion",
+            "androidx.compose.runtime:runtime-livedata:$versions.composeVersion",
+            "androidx.ui:ui-tooling:$versions.composeVersion"
+    ]
+    room = [
+            "androidx.room:room-runtime:$versions.roomVersion",
+            "androidx.room:room-ktx:$versions.roomVersion",
+    ]
+    dagger = [
+            "com.google.dagger:hilt-android:$versions.daggerHiltCoreVersion",
+            "androidx.hilt:hilt-common:$versions.daggerHiltVersion",
+            "androidx.hilt:hilt-lifecycle-viewmodel:$versions.daggerHiltVersion"
+    ]
+
+    deps = [
+            coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion",
+            whatIf = "com.github.skydoves:whatif:$versions.whatIfVersion",
+            startUp = "androidx.startup:startup-runtime:$versions.startupVersion",
+            sandWich = "com.github.skydoves:sandwich:$versions.sandwichVersion",
+            glide = "com.github.bumptech.glide:glide:$versions.glide"
+    ]
+
+}
